@@ -1,3 +1,5 @@
+import PIL.ImageQt
+import PyQt5.QtGui
 import noise
 import sys
 from PIL import Image
@@ -131,4 +133,6 @@ def save_map():
     for i in range(x):
         for j in range(y):
             pixels[i, j] = int(map_array[j][i][0]), int(map_array[j][i][1]), int(map_array[j][i][2])
-    im.save("UI/resources/Images/Map1.jpg")
+    img_qt = PIL.ImageQt.ImageQt(im)
+    print(img_qt)
+    return img_qt
