@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>900</width>
-    <height>580</height>
+    <height>598</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -103,7 +103,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../Downloads/Images.qrc">:/Leave/leave.png</pixmap>
+     <pixmap resource="UI/resources/Images.qrc">:/Images/Images/leave.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -114,8 +114,8 @@
      <rect>
       <x>-10</x>
       <y>-20</y>
-      <width>921</width>
-      <height>611</height>
+      <width>911</width>
+      <height>621</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -132,7 +132,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../Downloads/Images.qrc"/>
+  <include location="UI/resources/Images.qrc"/>
  </resources>
  <connections/>
 </ui>

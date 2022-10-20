@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 import sys
+import Logic
+import UI.resources.Images
 
 
 class MainWindow(QMainWindow):
@@ -24,7 +26,6 @@ class PlayWindow(QMainWindow):
         self.LoadMap.clicked.connect(self.open_window_load)
         self.CreateNewMap.clicked.connect(self.open_window_create)
         self.Back.clicked.connect(self.open_back_window)
-
 
     def open_window_load(self):
         self.load_window = LoadWindow()
@@ -87,6 +88,8 @@ class InGameWindow(QMainWindow):
         super().__init__()
         uic.loadUi('TheGodgame_InGame.ui', self)
         self.setFixedSize(self.size())
+        Logic.create_map()
+        Logic.save_map()
         self.Leave.clicked.connect(self.open_back_window)
 
     def open_back_window(self):
@@ -97,4 +100,3 @@ class InGameWindow(QMainWindow):
 
 def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
-
