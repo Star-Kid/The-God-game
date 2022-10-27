@@ -2,6 +2,8 @@ from PyQt5.QtWidgets import *
 from PyQt5 import uic
 import sys
 import Logic
+from PIL import Image
+from PIL.ImageQt import ImageQt
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QMainWindow
 import UI.resources.Images
@@ -96,7 +98,10 @@ class InGameWindow(QMainWindow):
         self.image = QLabel(self)
         self.image.move(0, 0)
         self.image.resize(900, 600)
-        self.image.setPixmap(self.pixmap)
+        imag = Image.open('UI/resources/Images/Map1.jpg')
+        qimage = ImageQt(imag)
+        self.pixmap.fromImage(qimage)
+
         self.Leave.clicked.connect(self.open_back_window)
 
     def open_back_window(self):
