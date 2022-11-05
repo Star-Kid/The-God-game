@@ -13,7 +13,7 @@ def except_hook(cls, exception, traceback):
 
 def create_map():
     # region Основыне Переменные карты
-    seed = np.random.randint(0, 1000)
+    seed = 256
     shape = (600, 900)
     scale = 100
     octaves = 6
@@ -31,7 +31,6 @@ def create_map():
     mountain = [139, 137, 137]
 
     # endregion
-
     # region Формирование карты шума перлина
     def rgb_norm(world):
         world_min = np.min(world)
@@ -125,13 +124,20 @@ def create_map():
     return island_world_grad
 
 
-def save_map():
+def save_map(id):
     im = Image.new(mode="RGB", size=(900, 600))
     pixels = im.load()
     x, y = im.size
     map_array = create_map()
+    f = open(f"MapsFolder/Map{id}.txt", "w")
+    f.close()
+    f = open(f"MapsFolder/Map{id}.txt", "a")
+    for i in map_array:
+        for j in i:
+            f.write(f"{str(j)}")
+    f.close()
+
     for i in range(x):
         for j in range(y):
             pixels[i, j] = int(map_array[j][i][0]), int(map_array[j][i][1]), int(map_array[j][i][2])
-    im.save("UI/resources/Images/Map1.jpg")
-    #return img_qt
+    return im
