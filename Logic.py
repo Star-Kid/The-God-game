@@ -1,3 +1,5 @@
+import sqlite3
+
 import PIL.ImageQt
 import PyQt5.QtGui
 import noise
@@ -6,19 +8,20 @@ from PIL import Image
 import numpy as np
 import math
 
+seed = 256
+persistence = 0.5
+scale = 100
+octaves = 6
+flat_arr = []
 
 def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
 
-
 def create_map():
+    global seed, octaves, lacunarity, scale
     # region Основыне Переменные карты
-    seed = 256
     shape = (600, 900)
-    scale = 100
-    octaves = 6
     persistence = 0.5
-    lacunarity = 2.0
     threshold = 50
 
     lightblue = [0, 191, 255]
@@ -124,20 +127,19 @@ def create_map():
     return island_world_grad
 
 
-def save_map(id):
+def save_map(id, sd, os, ly, se):
+    global seed, octaves, lacunarity, scale, flat_arr
+    seed = sd
+    octaves = os
+    lacunarity = ly
+    scale = se
     im = Image.new(mode="RGB", size=(900, 600))
     pixels = im.load()
     x, y = im.size
     map_array = create_map()
-    f = open(f"MapsFolder/Map{id}.txt", "w")
-    f.close()
-    f = open(f"MapsFolder/Map{id}.txt", "a")
-    for i in map_array:
-        for j in i:
-            f.write(f"{str(j)}")
-    f.close()
 
     for i in range(x):
         for j in range(y):
             pixels[i, j] = int(map_array[j][i][0]), int(map_array[j][i][1]), int(map_array[j][i][2])
+            flat_arr.append([int(map_array[j][i][0]), int(map_array[j][i][1]), int(map_array[j][i][2])])
     return im

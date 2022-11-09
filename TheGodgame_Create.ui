@@ -157,7 +157,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Code</string>
+     <string>Seed</string>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
@@ -169,9 +169,9 @@
    <widget class="QLabel" name="Ampletude">
     <property name="geometry">
      <rect>
-      <x>219</x>
+      <x>250</x>
       <y>180</y>
-      <width>141</width>
+      <width>111</width>
       <height>45</height>
      </rect>
     </property>
@@ -185,7 +185,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Amplitude</string>
+     <string>Octaves</string>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
@@ -197,9 +197,9 @@
    <widget class="QLabel" name="AICount">
     <property name="geometry">
      <rect>
-      <x>245</x>
+      <x>280</x>
       <y>284</y>
-      <width>111</width>
+      <width>71</width>
       <height>41</height>
      </rect>
     </property>
@@ -213,7 +213,7 @@
      </font>
     </property>
     <property name="text">
-     <string>AI count</string>
+     <string>Scale</string>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
@@ -222,12 +222,12 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="LongofWave">
+   <widget class="QLabel" name="PersistenceSlider">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>220</y>
-      <width>189</width>
+      <x>215</x>
+      <y>219</y>
+      <width>191</width>
       <height>70</height>
      </rect>
     </property>
@@ -241,7 +241,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Long of wave</string>
+     <string>Lacunarity</string>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
@@ -302,7 +302,7 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QSlider" name="AmpSlider">
+   <widget class="QSlider" name="OctavesSlider">
     <property name="geometry">
      <rect>
       <x>360</x>
@@ -368,7 +368,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QLineEdit" name="AIPole">
+   <widget class="QLineEdit" name="ScalePole">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -381,7 +381,7 @@
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>100</string>
     </property>
    </widget>
    <widget class="QPushButton" name="AIbg">
@@ -491,13 +491,13 @@
    <zorder>Size</zorder>
    <zorder>Ampletude</zorder>
    <zorder>AICount</zorder>
-   <zorder>LongofWave</zorder>
+   <zorder>PersistenceSlider</zorder>
    <zorder>CodeBG</zorder>
    <zorder>CodePole</zorder>
-   <zorder>AmpSlider</zorder>
+   <zorder>OctavesSlider</zorder>
    <zorder>WaveSlider</zorder>
    <zorder>AIbg</zorder>
-   <zorder>AIPole</zorder>
+   <zorder>ScalePole</zorder>
    <zorder>CreateButton</zorder>
   </widget>
  </widget>
