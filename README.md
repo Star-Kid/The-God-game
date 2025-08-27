@@ -6,3 +6,4 @@ to run the code you need to start a "Starter file"
 
 ![GamePlay](Map1.png)
 ![GamePlay](map2.png)
+![GamePlay](animation.gif)
