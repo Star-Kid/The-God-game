@@ -4,5 +4,5 @@ This is a perlin noise-based Engine, which able to create vary of maps by changi
 Getting started:
 to run the code you need to start a "Starter file"
 
-![GamePlay](The-God-game.Map1.png)
-![GamePlay](The-God-game.map2.png)
+![GamePlay](Map1.png)
+![GamePlay](map2.png)
